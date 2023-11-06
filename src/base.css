@@ -3,7 +3,7 @@
 
 :root {
   --primary-color: #001974;
-  --secundary-color: #00ec6d;
+  --secondary-color: #4adede;
   --light-color: #fff;
 }
 
@@ -22,7 +22,7 @@ body {
   background: var(--light-color);
 }
 
-.main {
+#app {
   width: 100vw;
   height: 100%;
   display: flex;
