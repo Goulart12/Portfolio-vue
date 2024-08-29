@@ -11,7 +11,7 @@
 <style scoped>
 .content {
     /* position: relative; */
-    margin-top: 18.75rem;
+
     z-index: 2000;
 }
 

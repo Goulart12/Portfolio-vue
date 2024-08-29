@@ -15,24 +15,32 @@ const elevateWaves = () => {
 
 <template>
     <div class="intro-container">
-        <MenuHamburguer />
-
         <NameLogo />
 
         <InitialButton :value="elevateWaves" :waves="wavesUp" />
 
         <Waves :valueWave="wavesUp" />
     </div>
+    <div class="main-container">
+        <bubble type="1" title="SOBRE MIM"/>
+    </div>
 </template>
 
 <style>
 .intro-container {
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100%;
+
+  background: var(--primary-color);
 }
 </style>
