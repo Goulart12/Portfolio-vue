@@ -62,7 +62,7 @@
 
 .about-header {
   display: grid;
-  grid-template-columns: 0.25fr 1fr;
+  grid-template-columns: 0.25fr 1fr 1fr;
   align-items: center;
   justify-content: center;
 }
@@ -71,6 +71,10 @@
   height: 9.375rem;
   width: 9.375rem;
   border-radius: 50%;
+}
+
+.about-header-info {
+  padding-left: 0.625rem;
 }
 
 .about-header-info h1 {
@@ -92,13 +96,83 @@
   color: var(--light-color);
 }
 
+.about-social-icons {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 0.625rem;
+  align-items: center;
+  justify-content: start;
+
+  padding-top: 0.625rem;
+}
+
 .about-social-icons img {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
+}
+
+.about-close {
+  width: 3.75rem;
+  height: 3.75rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2002;
+  cursor: pointer;
+  padding-left: 32.300rem;
+  padding-bottom: 4.375rem;
+}
+
+.about-close .line{
+  width: 2.5rem;
+  height: 0.563rem;
+  background: var(--primary-color);
+}
+
+.about-close .firstLine {
+  margin-bottom: -0.153rem;
+  transform: rotate(45deg);
+}
+
+.about-close .secondLine {
+  margin-top: -0.153rem;
+  transform: rotate(-45deg);
+}
+
+.about-description p {
+  width: 58.75rem;
+  height: 9.188rem;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.313rem;
+  padding-top: 2.125rem;
+  color: var(--light-color);
+}
+
+.about-tech h1 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 3rem;
+  color: var(--light-color);
+}
+
+.about-tech-cards {
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: start;
 }
 
 .about-tech-cards img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 </style>

@@ -22,7 +22,10 @@ const elevateWaves = () => {
         <Waves :valueWave="wavesUp" />
     </div>
     <div class="main-container">
-        <bubble type="1" title="SOBRE MIM"/>
+      <bubble type="1" title="SOBRE MIM"/>
+      <bubble type="1" title="SOBRE MIM"/>
+      <bubble type="1" title="SOBRE MIM"/>
+      <bubble type="1" title="SOBRE MIM"/>
     </div>
 </template>
 
@@ -42,5 +45,11 @@ const elevateWaves = () => {
   height: 100%;
 
   background: var(--primary-color);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  grid-gap: 3.125rem;
 }
 </style>
