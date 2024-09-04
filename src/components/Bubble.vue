@@ -1,23 +1,32 @@
 <script setup lang="ts">
   import {ref} from "vue";
   import About from "./insideComponents/About.vue";
+  import {openBubbleStore} from "../stores/OpenBubbleStore.ts";
+  import {storeToRefs} from "pinia";
 
   const props = defineProps({
     type: Number,
     title: String,
   });
 
-  const bubbleOpen = ref(false);
+  const store = openBubbleStore();
+  const { bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
 </script>
 
 <template>
-    <div class="circles circle1" v-if="type == 1" v-bind:class="{ active: bubbleOpen }" >
-      <p class="circle-title" v-on:click="bubbleOpen = !bubbleOpen" v-if="!bubbleOpen">{{title}}</p>
-      <about v-if="bubbleOpen"></about>
+    <div class="circles circle1" v-if="type == 1" v-bind:class="{ active: bubbleIsOpenOne }" >
+      <p class="circle-title" v-on:click="bubbleIsOpenOne = !bubbleIsOpenOne" v-if="!bubbleIsOpenOne">{{title}}</p>
+      <about v-if="bubbleIsOpenOne"></about>
     </div>
-    <div class="circles circle2" v-if="type == 2"></div>
-    <div class="circles circle3" v-if="type == 3"></div>
-    <div class="circles circle4" v-if="type == 4"></div>
+    <div class="circles circle2" v-if="type == 2">
+      <p class="circle-title" v-on:click="bubbleIsOpenTwo = !bubbleIsOpenTwo" v-if="!bubbleIsOpenTwo">{{title}}</p>
+    </div>
+    <div class="circles circle3" v-if="type == 3">
+      <p class="circle-title" v-on:click="bubbleIsOpenThree = !bubbleIsOpenThree" v-if="!bubbleIsOpenThree">{{title}}</p>
+    </div>
+    <div class="circles circle4" v-if="type == 4">
+      <p class="circle-title" v-on:click="bubbleIsOpenFour = !bubbleIsOpenFour" v-if="!bubbleIsOpenFour">{{title}}</p>
+    </div>
 </template>
 
 <style>

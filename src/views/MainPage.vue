@@ -23,9 +23,9 @@ const elevateWaves = () => {
     </div>
     <div class="main-container">
       <bubble type="1" title="SOBRE MIM"/>
-      <bubble type="1" title="SOBRE MIM"/>
-      <bubble type="1" title="SOBRE MIM"/>
-      <bubble type="1" title="SOBRE MIM"/>
+      <bubble type="2" title="PROJETOS"/>
+      <bubble type="3" title="CONTATO"/>
+      <bubble type="4" title="CURRÍCULO"/>
     </div>
 </template>
 
@@ -50,6 +50,8 @@ const elevateWaves = () => {
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
+  justify-self: center;
   grid-gap: 3.125rem;
+  padding: 10rem;
 }
 </style>

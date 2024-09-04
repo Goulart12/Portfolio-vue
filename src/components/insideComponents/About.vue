@@ -1,5 +1,10 @@
 <script setup lang="ts">
 
+import {openBubbleStore} from "../../stores/OpenBubbleStore.ts";
+import {storeToRefs} from "pinia";
+
+const store = openBubbleStore();
+const { bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
 </script>
 
 <template>
@@ -17,7 +22,7 @@
         </div>
       </div>
 
-      <div class="about-close">
+      <div class="about-close"  v-on:click="bubbleIsOpenOne = !bubbleIsOpenOne">
         <span class="line firstLine"></span>
         <span class="line secondLine"></span>
       </div>
@@ -119,10 +124,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 2002;
   cursor: pointer;
-  padding-left: 32.300rem;
-  padding-bottom: 4.375rem;
+  margin-left: 20rem;
+  margin-bottom: 4.375rem;
 }
 
 .about-close .line{
@@ -132,12 +136,12 @@
 }
 
 .about-close .firstLine {
-  margin-bottom: -0.153rem;
+  margin-bottom: -0.2815rem;
   transform: rotate(45deg);
 }
 
 .about-close .secondLine {
-  margin-top: -0.153rem;
+  margin-top: -0.2815rem;
   transform: rotate(-45deg);
 }
 
