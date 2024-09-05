@@ -3,6 +3,7 @@
   import About from "./insideComponents/About.vue";
   import {openBubbleStore} from "../stores/OpenBubbleStore.ts";
   import {storeToRefs} from "pinia";
+  import Modal from "./insideComponents/Modal.vue";
 
   const props = defineProps({
     type: Number,
@@ -10,22 +11,26 @@
   });
 
   const store = openBubbleStore();
-  const { bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
+  const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
+
+  const openBubbleOne = () => {
+    bubbleIsOpenOne.value = !bubbleIsOpenOne.value;
+    bubbleIsOpen.value = !bubbleIsOpen.value;
+  }
 </script>
 
 <template>
-    <div class="circles circle1" v-if="type == 1" v-bind:class="{ active: bubbleIsOpenOne }" >
-      <p class="circle-title" v-on:click="bubbleIsOpenOne = !bubbleIsOpenOne" v-if="!bubbleIsOpenOne">{{title}}</p>
-      <about v-if="bubbleIsOpenOne"></about>
+    <div class="circles circle1" v-if="type == 1" v-on:click="openBubbleOne" >
+      <p class="circle-title">{{title}}</p>
     </div>
-    <div class="circles circle2" v-if="type == 2">
-      <p class="circle-title" v-on:click="bubbleIsOpenTwo = !bubbleIsOpenTwo" v-if="!bubbleIsOpenTwo">{{title}}</p>
+    <div class="circles circle2" v-if="type == 2" v-on:click="bubbleIsOpenTwo = !bubbleIsOpenTwo">
+      <p class="circle-title">{{title}}</p>
     </div>
-    <div class="circles circle3" v-if="type == 3">
-      <p class="circle-title" v-on:click="bubbleIsOpenThree = !bubbleIsOpenThree" v-if="!bubbleIsOpenThree">{{title}}</p>
+    <div class="circles circle3" v-if="type == 3" v-on:click="bubbleIsOpenThree = !bubbleIsOpenThree">
+      <p class="circle-title">{{title}}</p>
     </div>
-    <div class="circles circle4" v-if="type == 4">
-      <p class="circle-title" v-on:click="bubbleIsOpenFour = !bubbleIsOpenFour" v-if="!bubbleIsOpenFour">{{title}}</p>
+    <div class="circles circle4" v-if="type == 4" v-on:click="bubbleIsOpenFour = !bubbleIsOpenFour">
+      <p class="circle-title">{{title}}</p>
     </div>
 </template>
 

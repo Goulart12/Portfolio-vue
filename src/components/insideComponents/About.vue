@@ -4,7 +4,12 @@ import {openBubbleStore} from "../../stores/OpenBubbleStore.ts";
 import {storeToRefs} from "pinia";
 
 const store = openBubbleStore();
-const { bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
+const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
+
+const closeBubbleOne = () => {
+  bubbleIsOpenOne.value = !bubbleIsOpenOne.value;
+  bubbleIsOpen.value = !bubbleIsOpen.value;
+}
 </script>
 
 <template>
@@ -22,7 +27,7 @@ const { bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } 
         </div>
       </div>
 
-      <div class="about-close"  v-on:click="bubbleIsOpenOne = !bubbleIsOpenOne">
+      <div class="about-close"  v-on:click="closeBubbleOne">
         <span class="line firstLine"></span>
         <span class="line secondLine"></span>
       </div>
