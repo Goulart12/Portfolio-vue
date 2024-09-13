@@ -1,11 +1,15 @@
 <script setup lang="ts">
-
 import About from "./About.vue";
+import {openBubbleStore} from "../../stores/OpenBubbleStore.ts";
+import {storeToRefs} from "pinia";
+
+const store = openBubbleStore();
+const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
 </script>
 
 <template>
 <div class="main-modal">
-  <about></about>
+  <about v-if="bubbleIsOpenOne"></about>
 </div>
 </template>
 
