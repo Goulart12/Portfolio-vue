@@ -8,6 +8,7 @@ import { ref } from "vue";
 import Modal from "../components/insideComponents/Modal.vue";
 import {openBubbleStore} from "../stores/OpenBubbleStore.ts";
 import {storeToRefs} from "pinia";
+import About from "../components/insideComponents/About.vue";
 
 const wavesUp = ref(false);
 
@@ -27,17 +28,21 @@ const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbl
 
         <Waves :valueWave="wavesUp" />
     </div>
-    <div class="main-container">
-      <div class="main-bubbles" v-if="!bubbleIsOpen">
-        <bubble type="1" title="SOBRE MIM" />
-        <bubble type="2" title="PROJETOS"/>
-        <bubble type="3" title="CONTATO"/>
-        <bubble type="4" title="CURRÍCULO"/>
-      </div>
-     <transition>
-       <modal v-if="bubbleIsOpen"></modal>
-     </transition>
+    <div class="main-container" id="main">
+       <about v-if="!bubbleIsOpen"></about>
+
+        <div class="main-bubbles" v-if="!bubbleIsOpen">
+          <bubble title="Projeto" type="1"></bubble>
+          <bubble title="Projeto" type="2"></bubble>
+          <bubble title="Projeto" type="3"></bubble>
+          <bubble title="Projeto" type="4"></bubble>
+        </div>
+
+
+        <modal v-if="bubbleIsOpen"></modal>
+
     </div>
+
 </template>
 
 <style>
@@ -52,22 +57,30 @@ const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbl
 }
 
 .main-container {
-  width: 100vw;
+  max-width:100%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  background: var(--primary-color);
+}
+
+.main-projects-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--primary-color);
 }
 
 .main-bubbles {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
+  grid-template-rows: repeat(4, 1fr);
+  //align-items: center;
+  //justify-content: center;
+  //justify-self: center;
   grid-gap: 3.125rem;
-  padding: 10rem;
+  //padding: 10rem;
 }
 
 .v-enter-active {
@@ -81,5 +94,20 @@ const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbl
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 800px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+  }
+
+  .main-bubbles {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+  }
 }
 </style>

@@ -38,15 +38,15 @@
 .circles {
     border-radius: 50%;
     overflow: hidden;
-    background: linear-gradient(180deg, #00EC6D 0%, #001974 100%);
+    background: linear-gradient(180deg, #4adede 0%, #001974 100%);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .circle1 {
-    width: 13rem;
-    height: 13rem;
+    width: 6rem;
+    height: 6rem;
     animation: circulo1 5s linear infinite;
     z-index: 1;
 }
@@ -56,22 +56,22 @@
 }
 
 .circle2 {
-    width: 18.75rem;
-    height: 18.75rem;
+    width: 6rem;
+    height: 6rem;
     animation: circulo2 5s linear infinite;
     z-index: 1;
 }
 
 .circle3 {
-    width: 25rem;
-    height: 25rem;
+    width: 6rem;
+    height: 6rem;
     animation: circulo3 5s linear infinite;
     z-index: 1;
 }
 
 .circle4 {
-  width: 31.25rem;
-  height: 31.25rem;
+  width: 6rem;
+  height: 6rem;
   animation: circulo4 5s linear infinite;
   z-index: 1;
 }

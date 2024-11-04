@@ -2,6 +2,7 @@
 import About from "./About.vue";
 import {openBubbleStore} from "../../stores/OpenBubbleStore.ts";
 import {storeToRefs} from "pinia";
+import Projects from "./Projects.vue";
 
 const store = openBubbleStore();
 const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
@@ -9,7 +10,7 @@ const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbl
 
 <template>
 <div class="main-modal">
-  <about v-if="bubbleIsOpenOne"></about>
+  <projects v-if="bubbleIsOpenOne"></projects>
 </div>
 </template>
 
@@ -19,11 +20,12 @@ const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbl
     height: 59rem;
     border-radius: 1rem;
     overflow: hidden;
-    background: linear-gradient(180deg, #00EC6D 0%, #001974 100%);
+    background: linear-gradient(180deg, #4adede 0%, #001974 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     animation: circulo1 5s linear infinite;
+    z-index: 1000;
   }
 
   @keyframes circulo1 {
@@ -43,6 +45,12 @@ const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbl
 
     75% {
       border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .main-modal {
+      width: 100%;
     }
   }
 </style>
