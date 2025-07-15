@@ -6,81 +6,112 @@ import Bubble from "../components/Bubble.vue";
 import Waves from "../components/Waves.vue";
 import { ref } from "vue";
 import Modal from "../components/insideComponents/Modal.vue";
-import {openBubbleStore} from "../stores/OpenBubbleStore.ts";
-import {storeToRefs} from "pinia";
+import { openBubbleStore } from "../stores/OpenBubbleStore.ts";
+import { storeToRefs } from "pinia";
 import About from "../components/insideComponents/About.vue";
+import AboutSection from "../components/sectionsComponents/AboutSection.vue";
+import SkillsSection from "../components/sectionsComponents/SkillsSection.vue";
+import ProjectSection from "../components/sectionsComponents/ProjectSection.vue";
+import ResumeSection from "../components/sectionsComponents/ResumeSection.vue";
+import ContactSection from "../components/sectionsComponents/ContactSection.vue";
 
 const wavesUp = ref(false);
 
 const elevateWaves = () => {
-    wavesUp.value = true;
-}
+  wavesUp.value = true;
+};
 
 const store = openBubbleStore();
-const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
+const {
+  bubbleIsOpen,
+  bubbleIsOpenOne,
+  bubbleIsOpenTwo,
+  bubbleIsOpenThree,
+  bubbleIsOpenFour,
+} = storeToRefs(store);
 </script>
 
 <template>
-    <div class="intro-container">
-        <NameLogo />
+  <div class="intro-container">
+    <NameLogo />
 
-        <InitialButton :value="elevateWaves" :waves="wavesUp" />
+    <InitialButton :value="elevateWaves" :waves="wavesUp" />
 
-        <Waves :valueWave="wavesUp" />
+    <Waves :valueWave="wavesUp" />
+  </div>
+  <div
+    class="min-h-screen w-screen bg-(--primary-color) antialiased flex flex-col items-center"
+  >
+    <AboutSection></AboutSection>
+    <SkillsSection></SkillsSection>
+    <ProjectSection></ProjectSection>
+    <ResumeSection></ResumeSection>
+    <ContactSection></ContactSection>
+  </div>
+
+  <footer class="bg-(--primary-color) text-white py-4 px-6 text-center">
+    <div class="container mx-auto">
+      <p class="text-lg">
+        &copy; {{ new Date().getFullYear() }} Juarez Goulart. Todos os direitos
+        reservados.
+      </p>
     </div>
-    <div class="main-container" id="main">
-       <about v-if="!bubbleIsOpen"></about>
-
-        <div class="main-bubbles" v-if="!bubbleIsOpen">
-          <bubble title="Projeto" type="1"></bubble>
-          <bubble title="Projeto" type="2"></bubble>
-          <bubble title="Projeto" type="3"></bubble>
-          <bubble title="Projeto" type="4"></bubble>
-        </div>
-
-
-        <modal v-if="bubbleIsOpen"></modal>
-
-    </div>
-
+  </footer>
 </template>
 
 <style>
+@import "tailwindcss";
+
 .intro-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.main-container {
-  max-width:100%;
-  height: 100%;
+/* Custom scrollbar for a modern look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #e2e8f0; /* Slate 200 */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8; /* Slate 400 */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* Slate 500 */
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/*.main-container {
+  max-width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   justify-self: center;
   background: var(--primary-color);
-}
-
-.main-projects-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.main-bubbles {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  //align-items: center;
-  //justify-content: center;
-  //justify-self: center;
-  grid-gap: 3.125rem;
-  //padding: 10rem;
 }
 
 .v-enter-active {
@@ -94,7 +125,7 @@ const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbl
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-}
+}*/
 
 @media (max-width: 800px) {
   .main-container {
@@ -103,11 +134,6 @@ const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbl
     align-items: center;
     justify-content: center;
     justify-self: center;
-  }
-
-  .main-bubbles {
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
   }
 }
 </style>
