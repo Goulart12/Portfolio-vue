@@ -1,30 +1,42 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import CartShoppingIcon from "../../assets/icons/cart-shopping-list.svg";
+import CashMoneyIcon from "../../assets/icons/cash-money.svg";
+import SecretFriendIcon from "../../assets/icons/friend.svg";
 
 const projects = ref([
   {
-    title: "Plataforma E-commerce",
+    title: "Lista de Compras API",
     description:
-      "Desenvolvimento de uma plataforma de e-commerce completa com carrinho de compras, sistema de pagamento e painel de administração.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    link: "#",
-    image: "https://placehold.co/400x250/dddddd/000000?text=Projeto+E-commerce",
+      "API RESTful para gerenciamento de uma lista de compras, com funcionalidades de criação, edição e exclusão de itens.",
+    technologies: [".Net", "Docker", "PostgreSQL", "Redis", "JWT", "Swagger"],
+    link: "https://github.com/Goulart12/ShopList_API",
+    image: CartShoppingIcon,
   },
   {
-    title: "Aplicativo de Lista de Tarefas",
+    title: "Desafio técnico Money Transaction",
     description:
       "Aplicativo web responsivo para gerenciamento de tarefas, com funcionalidades de criação, edição e exclusão.",
-    technologies: ["Vue.js", "Firebase", "CSS3"],
-    link: "#",
-    image: "https://placehold.co/400x250/dddddd/000000?text=Projeto+Tarefas",
+    technologies: [
+      ".Net",
+      "Docker",
+      "PostgreSQL",
+      "Redis",
+      "JWT",
+      "BCrypt.Net",
+      "Swagger",
+      "Dapper",
+    ],
+    link: "https://github.com/Goulart12/MoneyTransactionTechChallenge",
+    image: CashMoneyIcon,
   },
   {
-    title: "API de Previsão do Tempo",
+    title: "Amigo Oculto API",
     description:
       "Construção de uma API RESTful para consumir dados de previsão do tempo e disponibilizá-los para aplicações front-end.",
-    technologies: ["Python", "Flask", "OpenWeather API"],
-    link: "#",
-    image: "https://placehold.co/400x250/dddddd/000000?text=Projeto+API",
+    technologies: ["Java", "SpringBoot", "Spring Data JPA", "PostgreSQL"],
+    link: "https://github.com/Goulart12/AmigoOculto_API",
+    image: SecretFriendIcon,
   },
 ]);
 
