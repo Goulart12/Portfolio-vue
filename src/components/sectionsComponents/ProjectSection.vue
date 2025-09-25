@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import CartShoppingIcon from "../../assets/icons/cart-shopping-list.svg";
-import CashMoneyIcon from "../../assets/icons/cash-money.svg";
-import SecretFriendIcon from "../../assets/icons/friend.svg";
+import CartShoppingIcon from "../../assets/icons/list.svg";
+import CashMoneyIcon from "../../assets/icons/money.svg";
+import SecretFriendIcon from "../../assets/icons/friendOcult.svg";
 
 const projects = ref([
   {
     title: "Lista de Compras API",
     description:
-      "API RESTful para gerenciamento de uma lista de compras, com funcionalidades de criação, edição e exclusão de itens.",
+      "API RESTful feita em .NET para gerenciamento de uma lista de compras, com funcionalidades de criação, edição e exclusão de itens.",
     technologies: [".Net", "Docker", "PostgreSQL", "Redis", "JWT", "Swagger"],
     link: "https://github.com/Goulart12/ShopList_API",
     image: CartShoppingIcon,
@@ -16,7 +16,7 @@ const projects = ref([
   {
     title: "Desafio técnico Money Transaction",
     description:
-      "Aplicativo web responsivo para gerenciamento de tarefas, com funcionalidades de criação, edição e exclusão.",
+      "Desafio técnico que demonstra um sistema de transações financeiras. Ele foi desenvolvido em .NET 8 e fornece uma API RESTful para gerenciar usuários, carteiras e transações financeiras.",
     technologies: [
       ".Net",
       "Docker",
@@ -33,7 +33,7 @@ const projects = ref([
   {
     title: "Amigo Oculto API",
     description:
-      "Construção de uma API RESTful para consumir dados de previsão do tempo e disponibilizá-los para aplicações front-end.",
+      "API RESTful em Java para gerenciar um sistema de amigo oculto, permitindo a criação de grupos, adição de participantes e sorteio automático dos amigos ocultos.",
     technologies: ["Java", "SpringBoot", "Spring Data JPA", "PostgreSQL"],
     link: "https://github.com/Goulart12/AmigoOculto_API",
     image: SecretFriendIcon,
@@ -66,7 +66,7 @@ function onImageErrorProject(event) {
           <img
             :src="project.image"
             :alt="project.title"
-            class="w-full h-48 object-cover object-center"
+            class="w-full h-50 object-cover object-center"
             @error="onImageErrorProject"
           />
           <div class="p-6 flex flex-col flex-grow">

@@ -19,6 +19,13 @@ const wavesUp = ref(false);
 
 const elevateWaves = () => {
   wavesUp.value = true;
+  const targetElement = document.getElementById("AboutSection");
+  if (targetElement) {
+    targetElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
 };
 
 const store = openBubbleStore();
@@ -42,7 +49,7 @@ const {
   <div
     class="min-h-screen w-screen bg-(--primary-color) antialiased flex flex-col items-center"
   >
-    <AboutSection></AboutSection>
+    <AboutSection id="AboutSection"></AboutSection>
     <SkillsSection></SkillsSection>
     <ProjectSection></ProjectSection>
     <ResumeSection></ResumeSection>
