@@ -82,7 +82,7 @@ const smoothScrollTo = (elementId: string, duration: number) => {
 
 @media (max-width: 768px) {
   .intro-container {
-    height: 80vh;
+    height: 85vh;
   }
 }
 
