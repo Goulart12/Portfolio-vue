@@ -1,85 +1,103 @@
 <script setup lang="ts">
-import {openBubbleStore} from "../../stores/OpenBubbleStore.ts";
-import {storeToRefs} from "pinia";
-import {ref} from "vue";
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { openBubbleStore } from "../../stores/OpenBubbleStore.ts";
+import { storeToRefs } from "pinia";
+import { ref } from "vue";
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
 const store = openBubbleStore();
-const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
+const {
+  bubbleIsOpen,
+  bubbleIsOpenOne,
+  bubbleIsOpenTwo,
+  bubbleIsOpenThree,
+  bubbleIsOpenFour,
+} = storeToRefs(store);
 
 const closeBubbleOne = () => {
   bubbleIsOpenOne.value = !bubbleIsOpenOne.value;
   bubbleIsOpen.value = !bubbleIsOpen.value;
-}
+};
 
 const galleryIsOpen = ref(false);
 const OpenGallery = () => {
   galleryIsOpen.value = !galleryIsOpen.value;
-}
+};
 
-const images = [
-  "initial.png",
-  "initial.png",
-  "initial.png",
-  "initial.png"
-];
+const images = ["initial.png", "initial.png", "initial.png", "initial.png"];
 </script>
 
 <template>
   <div class="project-container">
-
     <div class="project-content" v-if="!galleryIsOpen">
       <div class="project-header">
         <div class="project-header-info">
           <h1>Juarez Goulart</h1>
           <div class="project-social-icons">
             <img src="../../assets/icons/github.png" alt="Github" />
-            <img src="../../assets/icons/gallery.svg" alt="Galeria" v-on:click="OpenGallery" />
+            <img
+              src="../../assets/icons/gallery.svg"
+              alt="Galeria"
+              v-on:click="OpenGallery"
+            />
           </div>
         </div>
-        <div class="project-close"  v-on:click="closeBubbleOne">
+        <div class="project-close" v-on:click="closeBubbleOne">
           <span class="line firstLine"></span>
           <span class="line secondLine"></span>
         </div>
       </div>
 
       <div class="project-description">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione,
-          iusto. Sed, hic corrupti autem atque provident debitis ex modi facilis iusto mollitia nam maxime sit eos vitae illo nisi eligendi
-          animi reiciendis laborum odit in aperiam natus! Voluptatibus perferendis doloribus tenetur veritatis numquam natus, iste, eaque
-          dicta, magni aspernatur sunt corrupti consequatur? Porro tempora
-          veritatis vitae maxime dolor, facilis quidem quae ipsam voluptatibus
-          doloribus eius eum temporibus assumenda deleniti nulla minus quos possimus magnam adipisci dignissimos sapiente consequatur
-          recusandae. Quaerat saepe adipisci, nihil, quae necessitatibus dicta assumenda labore blanditiis fugit similique ipsum quod culpa
-          distinctio dolore ex quasi odio veritatis.</p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+          iusto. Sed, hic corrupti autem atque provident debitis ex modi facilis
+          iusto mollitia nam maxime sit eos vitae illo nisi eligendi animi
+          reiciendis laborum odit in aperiam natus! Voluptatibus perferendis
+          doloribus tenetur veritatis numquam natus, iste, eaque dicta, magni
+          aspernatur sunt corrupti consequatur? Porro tempora veritatis vitae
+          maxime dolor, facilis quidem quae ipsam voluptatibus doloribus eius
+          eum temporibus assumenda deleniti nulla minus quos possimus magnam
+          adipisci dignissimos sapiente consequatur recusandae. Quaerat saepe
+          adipisci, nihil, quae necessitatibus dicta assumenda labore blanditiis
+          fugit similique ipsum quod culpa distinctio dolore ex quasi odio
+          veritatis.
+        </p>
       </div>
 
       <div class="project-tech">
         <h1>Tecnologias</h1>
         <div class="project-tech-cards">
-          <img src="../../assets/icons/C_sharp.svg" alt="">
-          <img src="../../assets/icons/javaScript.svg" alt="">
-          <img src="../../assets/icons/vue.svg" alt="">
-          <img src="../../assets/icons/typescript.svg" alt="">
-          <img src="../../assets/icons/docker.svg" alt="">
-          <img src="../../assets/icons/amazon.svg" alt="">
-          <img src="../../assets/icons/postgresql.svg" alt="">
-          <img src="../../assets/icons/raven.svg" alt="">
-          <img src="../../assets/icons/redis.svg" alt="">
+          <img src="../../assets/icons/C_sharp.svg" alt="" />
+          <img src="../../assets/icons/javaScript.svg" alt="" />
+          <img src="../../assets/icons/vue.svg" alt="" />
+          <img src="../../assets/icons/typescript.svg" alt="" />
+          <img src="../../assets/icons/docker.svg" alt="" />
+          <img src="../../assets/icons/amazon.svg" alt="" />
+          <img src="../../assets/icons/postgresql.svg" alt="" />
+          <img src="../../assets/icons/raven.svg" alt="" />
+          <img src="../../assets/icons/redis.svg" alt="" />
         </div>
       </div>
     </div>
 
-    <div class="slider-container" v-if="galleryIsOpen" @click.self="OpenGallery">
-      <div class="slider-close"  v-on:click="OpenGallery">
-        <img src="src/assets/icons/x_icon.svg">
+    <div
+      class="slider-container"
+      v-if="galleryIsOpen"
+      @click.self="OpenGallery"
+    >
+      <div class="slider-close" v-on:click="OpenGallery">
+        <img src="../../assets/icons/x_icon.svg" />
       </div>
 
       <div class="slider-content">
         <carousel :items-to-show="1">
           <slide v-for="image in images" :key="images">
-            <img class="project-image" :src="`src/assets/${image}`" alt="Imagens">
+            <img
+              class="project-image"
+              :src="`src/assets/${image}`"
+              alt="Imagens"
+            />
           </slide>
 
           <template #addons="">
@@ -88,15 +106,14 @@ const images = [
           </template>
         </carousel>
       </div>
-
     </div>
   </div>
 </template>
 
 <style scoped>
 .project-container {
-  //display: grid;
-  //grid-template-rows: 1fr 1fr 0.25fr;
+  /*display: grid;
+  grid-template-rows: 1fr 1fr 0.25fr;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,7 +129,7 @@ const images = [
 }
 
 .project-header-info h1 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 2rem;
@@ -121,7 +138,7 @@ const images = [
 }
 
 .project-header-info h3 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 1.25rem;
@@ -158,7 +175,7 @@ const images = [
   margin-bottom: 1.375rem;
 }
 
-.project-close .line{
+.project-close .line {
   width: 2.5rem;
   height: 0.563rem;
   background: var(--primary-color);
@@ -178,7 +195,7 @@ const images = [
   width: 58.75rem;
   height: 9.188rem;
 
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
@@ -188,7 +205,7 @@ const images = [
 }
 
 .project-tech h1 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 1.25rem;
@@ -239,7 +256,6 @@ const images = [
 }
 
 @media (max-width: 800px) {
-
   .project-header {
     display: flex;
     flex-direction: column-reverse;
@@ -271,7 +287,7 @@ const images = [
     text-align: center;
   }
 
-  .project-tech h1{
+  .project-tech h1 {
     text-align: center;
   }
 

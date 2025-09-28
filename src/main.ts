@@ -2,10 +2,22 @@ import { createApp } from "vue";
 // import './style.css'
 import "./base.css";
 import App from "./App.vue";
-import { createPinia } from 'pinia';
+import { createPinia } from "pinia";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
-const pinia = createPinia()
-const app = createApp(App)
+// import fontawesome icon component
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-app.use(pinia)
-app.mount('#app')
+// import config so we can set a default style
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
+library.add(fab, fas);
+
+const pinia = createPinia();
+const app = createApp(App);
+
+app.use(pinia).component("font-awesome-icon", FontAwesomeIcon);
+app.mount("#app");
