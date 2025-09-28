@@ -6,8 +6,17 @@ import "vue3-carousel/dist/carousel.css";
 import CartShoppingIcon from "../../assets/icons/list.svg";
 import CashMoneyIcon from "../../assets/icons/money.svg";
 import SecretFriendIcon from "../../assets/icons/friendOcult.svg";
+import Credit from "../../assets/icons/credit.svg";
 
 const projects = ref([
+  {
+    title: "Rinha de Backend",
+    description:
+      "Este projeto é uma implementação para a Rinha de Backend de 2025, focando em uma arquitetura assíncrona para processamento de pagamentos.",
+    technologies: [".Net 9", "Docker", "Redis", "Nginx"],
+    link: "https://github.com/Goulart12/Rinha2025",
+    image: Credit,
+  },
   {
     title: "Lista de Compras API",
     description:
