@@ -53,12 +53,10 @@ const projects = ref([
 ]);
 
 const breakpoints = {
-  // 700px and up
   700: {
     itemsToShow: 2,
     snapAlign: "center",
   },
-  // 1024 and up
   1024: {
     itemsToShow: 3,
     snapAlign: "start",
@@ -134,59 +132,50 @@ function onImageErrorProject(event) {
   </section>
 </template>
 
-<style>
+<style scoped>
 @import "tailwindcss";
 
-.carousel__prev,
-.carousel__next {
+:deep(.carousel__prev),
+:deep(.carousel__next) {
   background-color: var(--secondary-color);
-  color: white;
+  color: var(--light-color);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
+  width: 3.125rem;
+  height: 3.125rem;
+  font-size: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.carousel__prev {
-  left: -50px;
+:deep(.carousel__prev) {
+  left: -3.125rem;
 }
-.carousel__next {
-  right: -50px;
+:deep(.carousel__next) {
+  right: -3.125rem;
 }
 
-.carousel__prev:hover,
-.carousel__next:hover {
+:deep(.carousel__prev:hover),
+:deep(.carousel__next:hover) {
   background-color: var(--light-color);
   color: var(--primary-color);
-}
-
-.carousel__pagination-button::after {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-.carousel__pagination-button:hover::after,
-.carousel__pagination-button--active::after {
-  background-color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
   .carousel__navigation-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.25rem;
   }
-  .carousel__prev,
-  .carousel__next {
+  :deep(.carousel__prev),
+  :deep(.carousel__next) {
     position: static;
     transform: translateY(0);
-    margin: 0 10px;
+    margin: 0 0.625rem;
   }
-  .carousel__prev {
+  :deep(.carousel__prev) {
     left: auto;
   }
-  .carousel__next {
+  :deep(.carousel__next) {
     right: auto;
   }
 }

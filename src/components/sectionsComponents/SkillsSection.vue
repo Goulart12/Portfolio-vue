@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { Carousel, Navigation, Slide } from "vue3-carousel";
+import "vue3-carousel/dist/carousel.css";
 
 import CSharpIcon from "../../assets/icons/C_sharp.svg";
 import AWSIcon from "../../assets/icons/amazon.svg";
@@ -25,7 +26,6 @@ const skills = ref([
   { name: "JavaScript", icon: JavascriptIcon },
   { name: "Vue.js", icon: VueIcon },
   { name: "TailwindCSS", icon: Tailwind },
-  // { name: "Java", icon: Java },
   { name: "AWS", icon: AWSIcon },
   { name: "Google Cloud", icon: GoogleIcon },
   { name: "Azure", icon: AzureIcon },
@@ -37,6 +37,16 @@ const skills = ref([
   { name: "RavenDB", icon: RavenIcon },
   { name: "MongoDB", icon: Mongo },
 ]);
+
+const chunkedSkills = computed(() => {
+  const chunkSize = 6;
+  const chunks = [];
+  const skillsArray = skills.value;
+  for (let i = 0; i < skillsArray.length; i += chunkSize) {
+    chunks.push(skillsArray.slice(i, i + chunkSize));
+  }
+  return chunks;
+});
 </script>
 
 <template>
@@ -48,8 +58,9 @@ const skills = ref([
           class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-(--secondary-color) rounded-full"
         ></span>
       </h2>
+
       <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-10"
+        class="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-10"
       >
         <div
           v-for="(skill, index) in skills"
@@ -62,10 +73,68 @@ const skills = ref([
           </p>
         </div>
       </div>
+
+      <div class="block md:hidden mt-10">
+        <Carousel :items-to-show="1" :wrap-around="true">
+          <Slide
+            v-for="(skillChunk, chunkIndex) in chunkedSkills"
+            :key="chunkIndex"
+          >
+            <div class="grid grid-cols-2 gap-4 p-1">
+              <div
+                v-for="(skill, skillIndex) in skillChunk"
+                :key="skillIndex"
+                class="flex flex-col items-center p-4 bg-white rounded-xl shadow-lg"
+              >
+                <img :src="`${skill.icon}`" class="size-16 mb-2" />
+                <p
+                  class="text-base font-semibold text-(--primary-color) text-center"
+                >
+                  {{ skill.name }}
+                </p>
+              </div>
+            </div>
+          </Slide>
+
+          <template #addons>
+            <div class="carousel__navigation-wrapper">
+              <Navigation />
+            </div>
+          </template>
+        </Carousel>
+      </div>
     </div>
   </section>
 </template>
 
-<style>
+<style scoped>
 @import "tailwindcss";
+
+.carousel__navigation-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+:deep(.carousel__prev),
+:deep(.carousel__next) {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.625rem;
+  position: static;
+  transform: none;
+}
+
+:deep(.carousel__prev:hover),
+:deep(.carousel__next:hover) {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
 </style>
