@@ -7,14 +7,14 @@ const resume = ref([
     role: "Desenvolvedor Full Stack Jr",
     company: "Helps-On",
     description:
-      "Criação de uma aplicação de serviço com a API sendo feita em C#, utilizando RavenDB, Redis, RabbitMQ. Criei funcionalidades como cadastro de usuário, perfil e avaliação de clientes e parceiros, envios de e-mail e notificações em múltiplos idiomas. Participei também do desenvolvimento de algumas partes da interface gráfica feita com Typescript e VueJs.",
+      "Participei do desenvolvimento de uma aplicação de serviços, atuando na criação da API em C#, com utilização de RavenDB, Redis e RabbitMQ para persistência de dados, cache e mensageria. Contribuí com a implementação de funcionalidades como sistema de punições e banimentos de usuários, gestão de perfil e avaliações de clientes e parceiros, além do envio de e-mails e notificações multilíngues. Também participei da construção da aplicação Web/PWA utilizando TypeScript, Vue.js e Tailwind CSS.",
   },
   {
     period: "2020 - 2024",
     role: "Bacharel em Ciência da Computação",
     company: "Universidade Estácio de Sá",
     description:
-      "Foco em algoritmos, estrutura de dados e desenvolvimento de software.",
+      "Foco em áreas como algoritmos, linguagens de programação, estruturas de dados, sistemas operacionais, redes de computadores, inteligência artificial, banco de dados e engenharia de software.",
   },
   {
     period: "2015 - 2018",

@@ -19,13 +19,29 @@ const wavesUp = ref(false);
 
 const elevateWaves = () => {
   wavesUp.value = true;
-  const targetElement = document.getElementById("AboutSection");
-  if (targetElement) {
-    targetElement.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
+  smoothScrollTo("AboutSection", 3000);
+};
+
+const smoothScrollTo = (elementId: string, duration: number) => {
+  const targetElement = document.getElementById(elementId);
+  if (!targetElement) return;
+
+  const targetPosition =
+    targetElement.getBoundingClientRect().top + window.pageYOffset;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  let startTime: number | null = null;
+
+  const animation = (currentTime: number) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const run = Math.min(timeElapsed / duration, 1);
+    const ease = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+    window.scrollTo(0, startPosition + distance * ease(run));
+    if (timeElapsed < duration) requestAnimationFrame(animation);
+  };
+
+  requestAnimationFrame(animation);
 };
 
 const store = openBubbleStore();
