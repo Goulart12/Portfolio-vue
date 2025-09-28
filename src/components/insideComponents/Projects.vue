@@ -6,13 +6,7 @@ import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
 const store = openBubbleStore();
-const {
-  bubbleIsOpen,
-  bubbleIsOpenOne,
-  bubbleIsOpenTwo,
-  bubbleIsOpenThree,
-  bubbleIsOpenFour,
-} = storeToRefs(store);
+const { bubbleIsOpen, bubbleIsOpenOne } = storeToRefs(store);
 
 const closeBubbleOne = () => {
   bubbleIsOpenOne.value = !bubbleIsOpenOne.value;
@@ -92,7 +86,7 @@ const images = ["initial.png", "initial.png", "initial.png", "initial.png"];
 
       <div class="slider-content">
         <carousel :items-to-show="1">
-          <slide v-for="image in images" :key="images">
+          <slide v-for="image in images" :key="image">
             <img
               class="project-image"
               :src="`src/assets/${image}`"
