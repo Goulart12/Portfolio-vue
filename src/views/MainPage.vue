@@ -80,6 +80,12 @@ const smoothScrollTo = (elementId: string, duration: number) => {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .intro-container {
+    height: 85vh;
+  }
+}
+
 /* Custom scrollbar for a modern look */
 ::-webkit-scrollbar {
   width: 8px;
