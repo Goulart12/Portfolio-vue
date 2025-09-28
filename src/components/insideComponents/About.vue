@@ -1,22 +1,25 @@
 <script setup lang="ts">
-
-import {openBubbleStore} from "../../stores/OpenBubbleStore.ts";
-import {storeToRefs} from "pinia";
+import { openBubbleStore } from "../../stores/OpenBubbleStore.ts";
+import { storeToRefs } from "pinia";
 
 const store = openBubbleStore();
-const { bubbleIsOpen, bubbleIsOpenOne, bubbleIsOpenTwo, bubbleIsOpenThree, bubbleIsOpenFour } = storeToRefs(store);
+const { bubbleIsOpen, bubbleIsOpenOne } = storeToRefs(store);
 
 const closeBubbleOne = () => {
   bubbleIsOpenOne.value = !bubbleIsOpenOne.value;
   bubbleIsOpen.value = !bubbleIsOpen.value;
-}
+};
 </script>
 
 <template>
   <div class="main-about">
     <div class="about-container">
       <div class="about-header">
-        <img src="../../assets/juarez-profile.jpeg" alt="Foto de perfil" class="profile-picture"/>
+        <img
+          src="../../assets/juarez-profile.jpeg"
+          alt="Foto de perfil"
+          class="profile-picture"
+        />
 
         <div class="about-header-info">
           <h1>Juarez Goulart</h1>
@@ -28,35 +31,46 @@ const closeBubbleOne = () => {
           </div>
         </div>
 
-        <!--      <div class="about-close"  v-on:click="closeBubbleOne">-->
-        <!--        <span class="line firstLine"></span>-->
-        <!--        <span class="line secondLine"></span>-->
-        <!--      </div>-->
+        <div class="about-close" v-on:click="closeBubbleOne">
+          <span class="line firstLine"></span>
+          <span class="line secondLine"></span>
+        </div>
       </div>
 
       <div class="about-description">
-        <p>I am a 24-year-old back-end developer, graduated in Computer Science, currently living in Volta Redonda, RJ. I have solid experience in technologies such as C#, .NET, and SQL and NoSQL databases.
-          My work includes building efficient APIs and system integration, as well as using tools like Redis, RabbitMQ, Docker, AWS, and Google Cloud.<br/>
-          <br/>
-          I also have knowledge in front-end development using JavaScript, TypeScript, and Vue.js. In addition to my technical skills, I value the importance of soft skills in the workplace.
-          I am an effective communicator, work well in teams, and have a knack for problem-solving, which allows me to collaborate productively with colleagues from different areas.<br/>
-          <br/>
-          I am always looking to enhance my skills and contribute to challenging projects that promote innovation and efficiency.
-          I am open to new opportunities that allow me to grow and collaborate in dynamic, learning-oriented environments.</p>
+        <p>
+          I am a 24-year-old back-end developer, graduated in Computer Science,
+          currently living in Volta Redonda, RJ. I have solid experience in
+          technologies such as C#, .NET, and SQL and NoSQL databases. My work
+          includes building efficient APIs and system integration, as well as
+          using tools like Redis, RabbitMQ, Docker, AWS, and Google Cloud.<br />
+          <br />
+          I also have knowledge in front-end development using JavaScript,
+          TypeScript, and Vue.js. In addition to my technical skills, I value
+          the importance of soft skills in the workplace. I am an effective
+          communicator, work well in teams, and have a knack for
+          problem-solving, which allows me to collaborate productively with
+          colleagues from different areas.<br />
+          <br />
+          I am always looking to enhance my skills and contribute to challenging
+          projects that promote innovation and efficiency. I am open to new
+          opportunities that allow me to grow and collaborate in dynamic,
+          learning-oriented environments.
+        </p>
       </div>
 
       <div class="about-tech">
         <h1>Tecnologias</h1>
         <div class="about-tech-cards">
-          <img src="../../assets/icons/C_sharp.svg" alt="">
-          <img src="../../assets/icons/javaScript.svg" alt="">
-          <img src="../../assets/icons/vue.svg" alt="">
-          <img src="../../assets/icons/typescript.svg" alt="">
-          <img src="../../assets/icons/docker.svg" alt="">
-          <img src="../../assets/icons/amazon.svg" alt="">
-          <img src="../../assets/icons/postgresql.svg" alt="">
-          <img src="../../assets/icons/raven.svg" alt="">
-          <img src="../../assets/icons/redis.svg" alt="">
+          <img src="../../assets/icons/C_sharp.svg" alt="" />
+          <img src="../../assets/icons/javaScript.svg" alt="" />
+          <img src="../../assets/icons/vue.svg" alt="" />
+          <img src="../../assets/icons/typescript.svg" alt="" />
+          <img src="../../assets/icons/docker.svg" alt="" />
+          <img src="../../assets/icons/amazon.svg" alt="" />
+          <img src="../../assets/icons/postgresql.svg" alt="" />
+          <img src="../../assets/icons/raven.svg" alt="" />
+          <img src="../../assets/icons/redis.svg" alt="" />
         </div>
       </div>
     </div>
@@ -65,11 +79,11 @@ const closeBubbleOne = () => {
 
 <style scoped>
 .main-about {
-  //width: 85rem;
+  width: 85rem;
   height: 59rem;
-  //border-radius: 1rem;
+  border-radius: 1rem;
   overflow: hidden;
-  //background: #001974;
+  background: #001974;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +116,7 @@ const closeBubbleOne = () => {
 }
 
 .about-header-info h1 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 2rem;
@@ -111,7 +125,7 @@ const closeBubbleOne = () => {
 }
 
 .about-header-info h3 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 1.25rem;
@@ -121,7 +135,7 @@ const closeBubbleOne = () => {
 }
 
 .about-header-info h2 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
@@ -158,7 +172,7 @@ const closeBubbleOne = () => {
   margin-bottom: 4.375rem;
 }
 
-.about-close .line{
+.about-close .line {
   width: 2.5rem;
   height: 0.563rem;
   background: var(--primary-color);
@@ -177,8 +191,7 @@ const closeBubbleOne = () => {
 .about-description p {
   width: 58.75rem;
 
-
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
@@ -188,7 +201,7 @@ const closeBubbleOne = () => {
 }
 
 .about-tech h1 {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 1.25rem;
@@ -210,7 +223,6 @@ const closeBubbleOne = () => {
 }
 
 @keyframes circulo1 {
-
   0%,
   100% {
     border-radius: 84% 36% 27% 73% / 55% 58% 42% 45%;
@@ -257,8 +269,7 @@ const closeBubbleOne = () => {
   .about-description p {
     width: 25.75rem;
 
-
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 0.875rem;
@@ -275,5 +286,4 @@ const closeBubbleOne = () => {
     justify-content: start;
   }
 }
-
 </style>

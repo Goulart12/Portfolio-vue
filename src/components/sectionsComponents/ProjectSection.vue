@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import { Carousel, Navigation, Slide } from "vue3-carousel";
 
 import "vue3-carousel/dist/carousel.css";
 import CartShoppingIcon from "../../assets/icons/list.svg";
@@ -53,19 +53,9 @@ const projects = ref([
 ]);
 
 const breakpoints = {
-  700: {
-    itemsToShow: 2,
-    snapAlign: "center",
-  },
-  1024: {
-    itemsToShow: 3,
-    snapAlign: "start",
-  },
+  700: { itemsToShow: 2, snapAlign: "start" as const },
+  1024: { itemsToShow: 3, snapAlign: "start" as const },
 };
-
-function onImageErrorProject(event) {
-  event.target.src = "https://placehold.co/400x250/dddddd/000000?text=Projeto"; // Fallback for project images
-}
 </script>
 
 <template>
@@ -93,7 +83,6 @@ function onImageErrorProject(event) {
               :src="project.image"
               :alt="project.title"
               class="w-full h-50 object-cover object-center"
-              @error="onImageErrorProject"
             />
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-2xl font-bold text-(--primary-color) mb-3">

@@ -1,14 +1,8 @@
 <script setup lang="ts">
-import MenuHamburguer from "../components/BurgerMenu.vue";
 import NameLogo from "../components/LogoName.vue";
 import InitialButton from "../components/InitialButton.vue";
-import Bubble from "../components/Bubble.vue";
 import Waves from "../components/Waves.vue";
 import { ref } from "vue";
-import Modal from "../components/insideComponents/Modal.vue";
-import { openBubbleStore } from "../stores/OpenBubbleStore.ts";
-import { storeToRefs } from "pinia";
-import About from "../components/insideComponents/About.vue";
 import AboutSection from "../components/sectionsComponents/AboutSection.vue";
 import SkillsSection from "../components/sectionsComponents/SkillsSection.vue";
 import ProjectSection from "../components/sectionsComponents/ProjectSection.vue";
@@ -43,15 +37,6 @@ const smoothScrollTo = (elementId: string, duration: number) => {
 
   requestAnimationFrame(animation);
 };
-
-const store = openBubbleStore();
-const {
-  bubbleIsOpen,
-  bubbleIsOpenOne,
-  bubbleIsOpenTwo,
-  bubbleIsOpenThree,
-  bubbleIsOpenFour,
-} = storeToRefs(store);
 </script>
 
 <template>

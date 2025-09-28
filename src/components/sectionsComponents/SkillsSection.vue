@@ -17,7 +17,6 @@ import GoogleIcon from "../../assets/icons/google-cloud.svg";
 import AzureIcon from "../../assets/icons/azure-icon.svg";
 import Mongo from "../../assets/icons/mongo.svg";
 import Git from "../../assets/icons/git.svg";
-import Java from "../../assets/icons/java.svg";
 import Tailwind from "../../assets/icons/tailwind.svg";
 
 const skills = ref([
