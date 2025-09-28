@@ -12,18 +12,30 @@ import RedisIcon from "../../assets/icons/redis.svg";
 import VueIcon from "../../assets/icons/vue.svg";
 import TypescriptIcon from "../../assets/icons/typescript.svg";
 import RabbitIcon from "../../assets/icons/rabbitmq.svg";
+import GoogleIcon from "../../assets/icons/google-cloud.svg";
+import AzureIcon from "../../assets/icons/azure-icon.svg";
+import Mongo from "../../assets/icons/mongo.svg";
+import Git from "../../assets/icons/git.svg";
+import Java from "../../assets/icons/java.svg";
+import Tailwind from "../../assets/icons/tailwind.svg";
 
 const skills = ref([
   { name: "C#", icon: CSharpIcon },
-  { name: "PostgreSql", icon: PostgresIcon },
-  { name: "Docker", icon: DockerIcon },
-  { name: "Vue.js", icon: VueIcon },
   { name: "TypeScript", icon: TypescriptIcon },
   { name: "JavaScript", icon: JavascriptIcon },
+  { name: "Vue.js", icon: VueIcon },
+  { name: "TailwindCSS", icon: Tailwind },
+  // { name: "Java", icon: Java },
   { name: "AWS", icon: AWSIcon },
-  { name: "Redis", icon: RedisIcon },
-  { name: "RavenDB", icon: RavenIcon },
+  { name: "Google Cloud", icon: GoogleIcon },
+  { name: "Azure", icon: AzureIcon },
+  { name: "Git", icon: Git },
+  { name: "Docker", icon: DockerIcon },
   { name: "RabbitMQ", icon: RabbitIcon },
+  { name: "Redis", icon: RedisIcon },
+  { name: "PostgreSql", icon: PostgresIcon },
+  { name: "RavenDB", icon: RavenIcon },
+  { name: "MongoDB", icon: Mongo },
 ]);
 </script>
 
