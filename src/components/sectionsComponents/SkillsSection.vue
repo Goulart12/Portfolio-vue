@@ -52,7 +52,7 @@ const chunkedSkills = computed(() => {
   <section id="skills" class="py-20 px-6 bg-gray-50 w-screen">
     <div class="mx-auto max-w-5xl h-full text-center">
       <h2 class="text-4xl font-bold text-(--primary-color) mb-6 relative pb-4">
-        Habilidades
+        Skills
         <span
           class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-(--secondary-color) rounded-full"
         ></span>
@@ -66,7 +66,7 @@ const chunkedSkills = computed(() => {
           :key="index"
           class="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition duration-300"
         >
-          <img :src="`${skill.icon}`" class="size-20 mb-4" />
+          <img :src="`${skill.icon}`" :alt="skill.name" class="size-20 mb-4" />
           <p class="text-xl font-semibold text-(--primary-color)">
             {{ skill.name }}
           </p>

@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <button id="main-button" class="main-button" @click="value">
-    <span>COMEÇAR</span>
+    <span>GET STARTED</span>
     <div class="liquid" :class="{ active: waves }"></div>
   </button>
 </template>
