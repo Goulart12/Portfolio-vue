@@ -60,8 +60,8 @@ const smoothScrollTo = (elementId: string, duration: number) => {
   <footer class="bg-(--primary-color) text-white py-4 px-6 text-center">
     <div class="container mx-auto">
       <p class="text-lg">
-        &copy; {{ new Date().getFullYear() }} Juarez Goulart. Todos os direitos
-        reservados.
+        &copy; {{ new Date().getFullYear() }} Juarez Goulart. All rights
+        reserved.
       </p>
     </div>
   </footer>

@@ -12,23 +12,23 @@ const projects = ref([
   {
     title: "Rinha de Backend",
     description:
-      "Este projeto é uma implementação para a Rinha de Backend de 2025, focando em uma arquitetura assíncrona para processamento de pagamentos.",
+      "This project is an implementation for the 2025 Rinha de Backend, focusing on an asynchronous architecture for payment processing.",
     technologies: [".Net 9", "Docker", "Redis", "Nginx"],
     link: "https://github.com/Goulart12/Rinha2025",
     image: Credit,
   },
   {
-    title: "Lista de Compras API",
+    title: "ShopList API",
     description:
-      "API RESTful feita em .NET para gerenciamento de uma lista de compras, com funcionalidades de criação, edição e exclusão de itens.",
+      "RESTful API written in .NET for managing a shopping list, with functionality for creating, editing, and deleting items.",
     technologies: [".Net", "Docker", "PostgreSQL", "Redis", "JWT", "Swagger"],
     link: "https://github.com/Goulart12/ShopList_API",
     image: CartShoppingIcon,
   },
   {
-    title: "Desafio técnico Money Transaction",
+    title: "Money Transaction Tech Challenge",
     description:
-      "Desafio técnico que demonstra um sistema de transações financeiras. Ele foi desenvolvido em .NET 8 e fornece uma API RESTful para gerenciar usuários, carteiras e transações financeiras.",
+      "Technical challenge demonstrating a financial transaction system. It was developed in .NET 8 and provides a RESTful API for managing users, wallets, and financial transactions.",
     technologies: [
       ".Net",
       "Docker",
@@ -43,9 +43,9 @@ const projects = ref([
     image: CashMoneyIcon,
   },
   {
-    title: "Amigo Oculto API",
+    title: "Secret Santa API",
     description:
-      "API RESTful em Java para gerenciar um sistema de amigo oculto, permitindo a criação de grupos, adição de participantes e sorteio automático dos amigos ocultos.",
+      "RESTful API in Java to manage a Secret Santa system, allowing the creation of groups, addition of participants and automatic drawing of Secret Santa's.",
     technologies: ["Java", "SpringBoot", "Spring Data JPA", "PostgreSQL"],
     link: "https://github.com/Goulart12/AmigoOculto_API",
     image: SecretFriendIcon,
@@ -65,7 +65,7 @@ const breakpoints = {
   >
     <div class="container mx-auto max-w-6xl text-center">
       <h2 class="text-4xl font-bold text-(--light-color) mb-12 relative pb-4">
-        Meus Projetos
+        My Projects
         <span
           class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-(--secondary-color) rounded-full"
         ></span>
@@ -106,7 +106,7 @@ const breakpoints = {
                 rel="noopener noreferrer"
                 class="inline-block bg-(--primary-color) text-white px-6 py-2 rounded-full font-semibold hover:bg-(--secondary-color) transition duration-300 self-center"
               >
-                Ver Projeto
+                View Project
               </a>
             </div>
           </div>

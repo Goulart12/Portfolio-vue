@@ -12,14 +12,14 @@ const developer = {
   <section id="contact" class="py-20 px-6 text-white w-screen">
     <div class="container mx-auto max-w-3xl text-center">
       <h2 class="text-4xl font-bold mb-6 relative pb-4">
-        Entre em Contato
+        Contact Me
         <span
           class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-(--secondary-color) rounded-full"
         ></span>
       </h2>
       <p class="text-lg mb-8 opacity-90">
-        Se você tem um projeto em mente ou apenas quer bater um papo, sinta-se à
-        vontade para me enviar uma mensagem!
+        If you have a project in mind or just want to chat, feel free to message
+        me!
       </p>
       <div class="flex flex-col items-center space-y-4">
         <a

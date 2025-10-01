@@ -3,25 +3,25 @@ import { ref } from "vue";
 
 const resume = ref([
   {
-    period: "2021 - Presente",
-    role: "Desenvolvedor Full Stack Jr",
+    period: "2021 - Present",
+    role: "Full Stack Developer Jr.",
     company: "Helps-On",
     description:
-      "Participei do desenvolvimento de uma aplicação de serviços, atuando na criação da API em C#, com utilização de RavenDB, Redis e RabbitMQ para persistência de dados, cache e mensageria. Contribuí com a implementação de funcionalidades como sistema de punições e banimentos de usuários, gestão de perfil e avaliações de clientes e parceiros, além do envio de e-mails e notificações multilíngues. Também participei da construção da aplicação Web/PWA utilizando TypeScript, Vue.js e Tailwind CSS.",
+      "Contributed to the development of a service-oriented application, focusing on building the API using C#. Utilized RavenDB, Redis, and RabbitMQ for data persistence, caching, and messaging, respectively. Implemented key features such as user punishment and ban systems, profile management, and customer/partner reviews. Also worked on multilingual email and notification systems. Additionally, participated in the development of the Web/PWA application using TypeScript, Vue.js, and Tailwind CSS.",
   },
   {
     period: "2020 - 2024",
-    role: "Bacharel em Ciência da Computação",
+    role: "Bachelor's Degree in Computer Science",
     company: "Universidade Estácio de Sá",
     description:
-      "Foco em áreas como algoritmos, linguagens de programação, estruturas de dados, sistemas operacionais, redes de computadores, inteligência artificial, banco de dados e engenharia de software.",
+      "Focus on algorithms, programming languages, data structures, operating systems, computer networks, artificial intelligence, databases and software engineering.",
   },
   {
     period: "2015 - 2018",
-    role: "Curso Técnico em Automação Industrial",
+    role: "Industrial Automation Technician Training",
     company: "Insituto Federal do Rio de Janeiro",
     description:
-      "Foco em programação de CLPs e Arduínos, automação de processos industriais e controle de sistemas.",
+      "Focus on PLC and Arduino programming, industrial process automation and systems control.",
   },
 ]);
 </script>
@@ -30,7 +30,7 @@ const resume = ref([
   <section id="resume" class="py-20 px-6 bg-gray-50 w-screen">
     <div class="container mx-auto max-w-4xl text-center">
       <h2 class="text-4xl font-bold text-(--primary-color) mb-12 relative pb-4">
-        Experiência & Educação
+        Experience & Education
         <span
           class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-(--secondary-color) rounded-full"
         ></span>

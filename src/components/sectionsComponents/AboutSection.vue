@@ -6,32 +6,32 @@
       <h2
         class="text-4xl font-bold text-[var(--light-color)] mb-6 relative pb-6"
       >
-        Sobre Mim
+        About Me
         <span
           class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[var(--secondary-color)] rounded-full"
         ></span>
       </h2>
       <p class="text-lg text-[var(--light-color)] leading-relaxed mb-4">
-        Sou um desenvolvedor back-end de 25 anos, formado em Ciência da
-        Computação, atualmente residindo em Volta Redonda, RJ. Possuo sólida
-        experiência em tecnologias como C#, .NET e bancos de dados SQL e NoSQL.
-        Tenho experiência de trabalho na construção de APIs eficientes e
-        integração de sistemas, além da utilização de ferramentas como Redis,
-        RabbitMQ, Docker, AWS e Google Cloud. Também possuo conhecimento em
-        desenvolvimento front-end utilizando JavaScript, TypeScript e Vue.js.
+        I’m a back-end developer with a degree in Computer Science and strong
+        experience building scalable APIs, microservices, and system
+        integrations using technologies like C#, .NET, Docker, Redis, RabbitMQ,
+        and both SQL and NoSQL databases (PostgreSQL, MongoDB, RavenDB).
       </p>
       <p class="text-lg text-[var(--light-color)] leading-relaxed mb-4">
-        Além das minhas habilidades técnicas, valorizo ​a importância das
-        habilidades interpessoais no ambiente de trabalho. Sou um comunicador
-        eficaz, trabalho bem em equipe e tenho facilidade para resolução de
-        problemas, o que me permite colaborar produtivamente com colegas de
-        diferentes áreas.
+        I’ve worked on building service-oriented applications with features such
+        as user registration and management, profiles, ratings, notifications
+        (via Firebase Cloud Messaging), and flexible email delivery systems
+        using various SMTP providers. I also contributed to codebase
+        architecture improvements, simplifying shared resource integration
+        across multiple applications and eliminating issues caused by symlinks.
+        While my main focus is back-end, I’ve also contributed to the front-end
+        side of projects using JavaScript, TypeScript, and Vue.js.
       </p>
       <p class="text-lg text-[var(--light-color)] leading-relaxed">
-        Estou sempre buscando aprimorar minhas habilidades e contribuir para
-        projetos desafiadores que promovam inovação e eficiência. Estou aberto a
-        novas oportunidades que me permitam crescer e colaborar em ambientes
-        dinâmicos e voltados para o aprendizado.
+        I’m a proactive problem-solver, a clear communicator, and a team player
+        who values clean, maintainable code and collaborative environments. I'm
+        always learning and looking for new challenges that allow me to grow and
+        deliver real impact through technology.
       </p>
     </div>
   </section>
